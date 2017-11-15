@@ -4,15 +4,6 @@ var plugins = [];
 //do we minify it all
 if(process.env.NODE_ENV === 'production'){
 	console.log("creating production build");
-	plugins.push(new webpack.optimize.UglifyJsPlugin({
-		mangle: {
-			keep_fnames: true
-		},
-		compress: {
-			keep_fnames: true,
-			warnings: false,
-		}
-	}));
 	plugins.push(new webpack.DefinePlugin({
 		'process.env.NODE_ENV': JSON.stringify('production')
 	}));
